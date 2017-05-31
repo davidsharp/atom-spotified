@@ -70,7 +70,8 @@ export default class AtomSpotifiedPoller {
                 state: state.state,
                 id: trackId,
                 name: track.name,
-                artist: track.artist
+                artist: track.artist,
+                cover: track.artwork_url!=='missing value'?track.artwork_url:undefined
               }))
               .catch((error) => this.handleError(error))
           })
