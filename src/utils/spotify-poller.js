@@ -42,7 +42,7 @@ export default class AtomSpotifiedPoller {
             id: trackId,
             name: track.name,
             artist: track.artist,
-            cover: track.artwork_url,
+            cover: !/missing ?value/gi.test(track.artwork_url)?track.artwork_url:null,
           }))
           .catch((error) => this.handleError(error))
 
